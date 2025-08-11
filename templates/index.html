@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Comment Threading System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Comment System</a>
+    <div class="d-flex">
+      <button id="treeViewBtn" class="btn btn-sm btn-outline-light me-2">Tree View</button>
+      <button id="flatViewBtn" class="btn btn-sm btn-light">Flat View</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5>Add a comment</h5>
+          <div class="mb-2">
+            <input id="userInput" class="form-control mb-2" placeholder="Your name (optional)">
+            <textarea id="contentInput" class="form-control" rows="3" placeholder="Write a comment..."></textarea>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button id="postBtn" class="btn btn-primary">Post Comment</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="commentsArea"></div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

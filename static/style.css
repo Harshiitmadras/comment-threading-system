@@ -1,0 +1,14 @@
+/* Simple modern styling */
+.comment {
+  border-left: 3px solid rgba(0,0,0,0.08);
+  padding-left: 12px;
+  margin-bottom: 12px;
+}
+.meta { font-size: 0.85rem; color: #555; }
+.content { white-space: pre-wrap; margin-top:6px; }
+.reply-btn { font-size:0.85rem; }
+.vote-badge { font-weight:600; padding:2px 8px; border-radius:12px; background:#f1f1f1; }
+.collapsed { opacity:0.7; }
+@media (max-width: 576px) {
+  .comment { padding-left:8px; }
+}
