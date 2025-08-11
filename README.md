@@ -12,7 +12,7 @@ Data is stored **in-memory** (no persistent DB) and lost on restart as required.
 - Concurrency-safe in-memory store (threading lock).
 - API-first design + responsive UI.
 - Unit tests (pytest).
-- Loom video placeholder: add your Loom link in README before submission.
+- Loom video
 
 ## Quick start (Linux / macOS / Windows WSL)
 1. Install Python 3.10+ and pip.
@@ -59,13 +59,13 @@ This ensures all reply threads remain manageable and conform to the assignment r
 Purpose:
 The entire comment and reply data is stored purely in-memory using Python dictionaries, without any persistent database, as per assignment requirements. This allows fast access and easy dynamic data structures.
 
-Data Structures:
+# Data Structures:
 
 posts: Map post IDs to lists of top-level comment IDs.
 
 comments: Map comment IDs to comment dictionaries, each containing fields like user, content, parent_comment_id, replies (list of child comment IDs), timestamp, and votes.
 
-Concurrency Handling:
+# Concurrency Handling:
 Since Flask’s default server can handle multiple requests in threaded mode, there could be concurrent access to these shared in-memory dictionaries. To prevent race conditions or corrupted data, a global Python threading.Lock() is used.
 
 All mutation operations (adding comments, updating replies, voting) acquire this lock before modifying the data and release it after.
@@ -76,7 +76,7 @@ This guarantees atomicity of operations and consistency of the comment tree even
 Purpose:
 Long comment threads with many nested replies can be overwhelming. To maintain usability and a clean UI, the system implements an auto-collapse mechanism.
 
-How it works:
+# How it works:
 
 The backend sends an AUTO_COLLAPSE_THRESHOLD (default 10) along with the comment tree JSON response.
 
